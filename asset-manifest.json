@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/client-ve-vompiler/static/css/main.e6c13ad2.css",
+    "main.js": "/client-ve-vompiler/static/js/main.3ca3968e.js",
+    "static/js/453.62cfc497.chunk.js": "/client-ve-vompiler/static/js/453.62cfc497.chunk.js",
+    "index.html": "/client-ve-vompiler/index.html",
+    "main.e6c13ad2.css.map": "/client-ve-vompiler/static/css/main.e6c13ad2.css.map",
+    "main.3ca3968e.js.map": "/client-ve-vompiler/static/js/main.3ca3968e.js.map",
+    "453.62cfc497.chunk.js.map": "/client-ve-vompiler/static/js/453.62cfc497.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.3ca3968e.js"
+  ]
+}
