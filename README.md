@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Online Compiler Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project showcases an online compiler powered by VE Compiler and Monaco Editor, allowing users to write, edit, and run code snippets in various programming languages directly from their browsers.
 
-## Available Scripts
+## Features:
+- **Language Selection:** Users can choose from a range of programming languages including JavaScript, C, C++, Java, and Python.
+- **Theme Selection:** The editor offers multiple themes such as Light, Dark, and High Contrast Black to customize the coding environment according to preference.
+- **Real-Time Code Editing:** Utilizing the Monaco Editor, users can write and edit code comfortably with features like syntax highlighting and auto-completion.
+- **Instant Compilation:** Upon clicking the "Run" button, the code is sent to the VE Compiler API for compilation and execution, with the output displayed in real-time.
+- **Persistent Storage:** The user's code is automatically saved locally in the browser's storage, ensuring that work is preserved even if the browser is refreshed.
 
-In the project directory, you can run:
+## Usage:
+1. **Select Language:** Choose the desired programming language from the dropdown menu.
+2. **Select Theme:** Customize the editor's appearance by selecting a preferred theme from the available options.
+3. **Write Code:** Use the Monaco Editor to write or edit code in the selected language.
+4. **Run Code:** Click the "Run" button to compile and execute the code. The output will be displayed in the adjacent panel.
+5. **View Output:** The compiled output will be shown below the code editor, allowing users to review the results of their code execution.
 
-### `npm start`
+## Important Note:
+This IDE utilizes an API hosted on a free service, which may result in variable response times. Users are advised to be patient while waiting for compilation and execution to complete.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## About VE Compiler:
+VE Compiler is a versatile online compiler service that offers seamless code compilation and execution capabilities across multiple programming languages. It provides developers with a convenient platform to test and debug code snippets without the need for local installations or setups. With VE Compiler, developers can focus on writing efficient code while the platform takes care of the compilation process, offering a hassle-free coding experience.
