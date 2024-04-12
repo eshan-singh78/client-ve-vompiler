@@ -22,7 +22,6 @@ function App() {
 
   const runCode = async () => {
     try {
-      // Convert language to 'js' if it's 'javascript'
       const lang = language === 'javascript' ? 'js' : language;
       const response = await axios.post('https://server-ve-compiler.onrender.com/compile', {
         code,
@@ -44,6 +43,9 @@ function App() {
             <select value={language} onChange={handleLanguageChange}>
               <option value="javascript">JavaScript</option>
               <option value="c">C</option>
+              <option value="cpp">C++</option>
+              <option value="java">Java</option>
+              <option value="python">Python</option>
             </select>
           </div>
           <div style={{ border: '1px solid #ccc', borderRadius: '5px' }}>
