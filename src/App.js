@@ -45,7 +45,7 @@ function App() {
               <option value="c">C</option>
               <option value="cpp">C++</option>
               <option value="java">Java</option>
-              <option value="python">Python</option>
+              <option value="py">Python</option>
             </select>
           </div>
           <div style={{ border: '1px solid #ccc', borderRadius: '5px' }}>
