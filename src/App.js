@@ -6,6 +6,7 @@ function App() {
   const [code, setCode] = useState(localStorage.getItem('code') || '');
   const [output, setOutput] = useState('');
   const [language, setLanguage] = useState('javascript'); // Default language
+  const [theme, setTheme] = useState('vs'); // Default theme
 
   useEffect(() => {
     localStorage.setItem('code', code);
@@ -18,6 +19,11 @@ function App() {
   const handleLanguageChange = (event) => {
     const selectedLanguage = event.target.value;
     setLanguage(selectedLanguage);
+  };
+
+  const handleThemeChange = (event) => {
+    const selectedTheme = event.target.value;
+    setTheme(selectedTheme);
   };
 
   const runCode = async () => {
@@ -36,6 +42,10 @@ function App() {
 
   return (
     <div className="App">
+      <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+  <h1>Online Compiler Demo</h1>
+  <p>Try out the online compiler powered by VE Compiler and Monaco-editor!</p>
+</div>
       <div style={{ display: 'flex' }}>
         <div style={{ flex: 1, border: '1px solid #ccc', borderRadius: '5px', padding: '10px' }}>
           <div style={{ marginBottom: '10px', display: 'flex', alignItems: 'center' }}>
@@ -47,11 +57,18 @@ function App() {
               <option value="java">Java</option>
               <option value="py">Python</option>
             </select>
+            <label style={{ marginLeft: '20px', marginRight: '10px' }}>Select Theme:</label>
+            <select value={theme} onChange={handleThemeChange}>
+              <option value="vs">Light</option>
+              <option value="vs-dark">Dark</option>
+              <option value="hc-black">High Contrast Black</option>
+            </select>
           </div>
           <div style={{ border: '1px solid #ccc', borderRadius: '5px' }}>
             <Editor
               height="80vh"
               language={language}
+              theme={theme}
               value={code}
               onChange={handleEditorChange}
             />
@@ -70,6 +87,10 @@ function App() {
           </div>
         </div>
       </div>
+      <div style={{ textAlign: 'center', marginTop: '20px' }}>
+  <p style={{ color: 'red', fontWeight: 'bold' }}>IMPORTANT:</p>
+  <p>The following IDE uses an API that is hosted on a free service, so kindly wait for the response time.</p>
+</div>
     </div>
   );
 }
