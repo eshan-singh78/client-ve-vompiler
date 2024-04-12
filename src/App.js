@@ -7,10 +7,47 @@ function App() {
   const [output, setOutput] = useState('');
   const [language, setLanguage] = useState('javascript'); // Default language
   const [theme, setTheme] = useState('vs'); // Default theme
+  const [apiStatus, setApiStatus] = useState('Checking...');
+  const [countdown, setCountdown] = useState(120); // 2 minutes in seconds
 
   useEffect(() => {
     localStorage.setItem('code', code);
   }, [code]);
+
+  useEffect(() => {
+    const checkApiStatus = async () => {
+      try {
+        const response = await axios.get('https://server-ve-compiler.onrender.com/health');
+        if (response.status === 200 && response.data === 'Server is up and running') {
+          setApiStatus('API is up');
+        } else {
+          setApiStatus('API is down');
+        }
+      } catch (error) {
+        setApiStatus('API is down');
+      }
+    };
+
+    // Function to decrement countdown every second
+    const decrementCountdown = () => {
+      setCountdown((prevCountdown) => prevCountdown - 1);
+    };
+
+    // Check API status initially
+    checkApiStatus();
+
+    // Check API status every 2 minutes
+    const interval = setInterval(checkApiStatus, 120000); // 2 minutes in milliseconds
+
+    // Update countdown every second
+    const countdownInterval = setInterval(decrementCountdown, 1000);
+
+    // Clear intervals on component unmount
+    return () => {
+      clearInterval(interval);
+      clearInterval(countdownInterval);
+    };
+  }, []);
 
   const handleEditorChange = (value, event) => {
     setCode(value);
@@ -43,9 +80,9 @@ function App() {
   return (
     <div className="App">
       <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-  <h1>Online Compiler Demo</h1>
-  <p>Try out the online compiler powered by VE Compiler and Monaco-editor!</p>
-</div>
+        <h1>Online Compiler Demo</h1>
+        <p>Try out the online compiler powered by VE Compiler and Monaco-editor!</p>
+      </div>
       <div style={{ display: 'flex' }}>
         <div style={{ flex: 1, border: '1px solid #ccc', borderRadius: '5px', padding: '10px' }}>
           <div style={{ marginBottom: '10px', display: 'flex', alignItems: 'center' }}>
@@ -88,9 +125,11 @@ function App() {
         </div>
       </div>
       <div style={{ textAlign: 'center', marginTop: '20px' }}>
-  <p style={{ color: 'red', fontWeight: 'bold' }}>IMPORTANT:</p>
-  <p>The following IDE uses an API that is hosted on a free service, so kindly wait for the response time.</p>
-</div>
+        <p style={{ color: 'red', fontWeight: 'bold' }}>IMPORTANT:</p>
+        <p>The following IDE uses an API that is hosted on a free service, so kindly wait for the response time.</p>
+        <p>API Status: {apiStatus}</p>
+        <p>Checking in - {countdown} seconds</p>
+      </div>
     </div>
   );
 }
