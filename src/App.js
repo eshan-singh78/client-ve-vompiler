@@ -30,7 +30,15 @@ function App() {
 
     // Function to decrement countdown every second
     const decrementCountdown = () => {
-      setCountdown((prevCountdown) => prevCountdown - 1);
+      setCountdown((prevCountdown) => {
+        if (prevCountdown === 0) {
+          // If countdown reaches zero, reset it to its initial value and recall API
+          checkApiStatus();
+          return 120; // Assuming the initial value is 120 seconds
+        } else {
+          return prevCountdown - 1;
+        }
+      });
     };
 
     // Check API status initially
